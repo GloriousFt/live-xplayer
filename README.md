@@ -19,7 +19,7 @@
 
 ### 1.1组件使用方法
 
-在此处下载`live-xplayer`组件。
+在[此处](https://github.com/GloriousFt/live-xplayer/releases)下载`live-xplayer`组件。
 
 将`components/live-player`放到开发者的组件中，如果没有`components`目录则在`pages`新建后放入。
 
