@@ -1,0 +1,31 @@
+<view class="video-section">
+  <live-player id="livePlayer" mode="live" src="{{liveList[currentLiveIndex].src}}" bindfullscreenchange="fullscreenchange" bindstatechange="liveStateChange" binderror="liveErrorCallback" bindnetstatus="netStatus">
+    <cover-view class="live-invisible" bind:tap="panelControl"></cover-view>
+    <cover-view class="controls {{!showLiveControlPanel ? 'hidePanel' : ''}}">
+      <cover-view class="left-buttons">
+        <cover-view class="play panel-button {{liveStatus % 3 === 0 ? 'show' : ''}}" bind:tap="livePlay">
+          播放
+        </cover-view>
+        <cover-view class="resume panel-button {{liveStatus === 2 ? 'show' : ''}}" bind:tap="liveResume">
+          继续
+        </cover-view>
+        <cover-view class="pause panel-button {{liveStatus === 1 ? 'show' : ''}}" bind:tap="livePause">
+          暂停
+        </cover-view>
+        <cover-view class="stop panel-button {{liveStatus === 1 ? 'show' : ''}}" bind:tap="liveStop">
+          停止
+        </cover-view>
+      </cover-view>
+      <cover-view class="resolution panel-button {{isFullScreen ? '' : 'hidePanel'}}" bind:tap="toggleResolutionPanel">
+        {{liveList[currentLiveIndex].name}}
+      </cover-view>
+      <cover-view wx:if="{{!isFullScreen}}" class="panel-button full-screen" bind:tap="liveFullScreen">全屏</cover-view>
+      <cover-view wx:else class="panel-button full-screen" bind:tap="exitLiveFullScreen">取消全屏</cover-view>
+    </cover-view>
+    <cover-view class="resolution-panel {{showResolutionPanel ? '' : 'hidePanel'}}">
+      <block wx:key="{{index}}" wx:for="{{liveList}}" wx:for-item="resolution">
+        <cover-view id="{{index}}" class="resolution-item {{index === 0 ? 'no-border-top' : ''}} {{currentLiveIndex === index ? 'active' : ''}}" bind:tap="resolutionChange">{{resolution.name}}</cover-view>
+      </block>
+    </cover-view>
+  </live-player>
+</view>

@@ -1,0 +1,89 @@
+.video-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-section live-player {
+  width: 100%;
+  margin: 0px;
+  padding: 0;
+}
+
+.live-invisible {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 1;
+  z-index: 1;
+}
+
+.left-buttons {
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.controls {
+  position: absolute;
+  bottom: 0;
+  height: 70rpx;
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  color: #fff;
+  font-size: 30rpx;
+  z-index: 2;
+}
+
+.controls .show {
+  display: block;
+}
+
+.panel-button {
+  padding: 0 15rpx;
+  line-height: 50rpx;
+  margin: 8rpx;
+  border: 1rpx solid #fff;
+  border-radius: 15rpx;
+  flex: 0 1 auto;
+}
+
+.resolution {
+  position: relative;
+}
+
+.resolution-panel {
+  position: absolute;
+  bottom: 70rpx;
+  right: 164rpx;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 3;
+  color: #fff;
+  font-size: 30rpx;
+  text-align:center;
+}
+
+.resolution-item {
+  line-height: 40rpx;
+  margin: 8rpx;
+  padding: 0 15rpx;
+}
+
+.resolution-panel .no-border-top {
+  border: 0;
+}
+
+.resolution-panel .active {
+  color: #329cff;
+}
+
+.play, .resume, .stop, .pause {
+  display: none;
+}
+
+.hidePanel {
+  display: none;
+}
